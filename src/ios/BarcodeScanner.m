@@ -50,6 +50,7 @@
 
     [self.capture start];
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [pluginResult setKeepCallbackAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:_captureCallbackId];
 
     return;
