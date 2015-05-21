@@ -291,4 +291,32 @@
     <header-file src='src/ios/vendor/headers/ZXMultiFormatWriter.h' autogen='true'/>
     <source-file framework='true' src='src/ios/vendor/libPods-ZXingObjC.a' autogen='true'/>
   </platform>
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BarcodeScanner">
+        <param name="android-package" value="com.sandyclock.plugins.BarcodeScanner.BarcodeScanner"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.sandyclock.plugins.BarcodeScannerView"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar">
+      </activity>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.RECORD_VIDEO" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.CAMERA" />
+
+			<uses-feature android:name="android.hardware.camera" />
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-feature android:name="android.hardware.camera.setParameters" />
+    </config-file>
+
+    <source-file src="src/android/BarcodeScanner.java" target-dir="src/com/sandyclock/plugins/BarcodeScanner" />
+    <source-file src="src/android/libs/zxing-core-3.2.0.jar" target-dir="libs" />
+  </platform>
 </plugin>

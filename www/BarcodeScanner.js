@@ -8,7 +8,6 @@ module.exports = {
             }
         };
 
-        console.log(options);
         cordova.exec(callbackWrapper, false, "BarcodeScanner", "startCapture", [options]);
     },
 
