@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugin xmlns='http://apache.org/cordova/ns/plugins/1.0' id='com.sandyclock.plugins.BarcodeScanner' version='1.0.0dev'>
+  <name>
+    BarcodeScanner
+  </name>
+  <description>
+    The purpose of the plugin is to continuously scan for barcodes and
+    show camera preview under main Cordova webView.
+  </description>
+  <repo>
+    https://github.com/asennikov/BarcodeScannerPlugin.git
+  </repo>
+  <keywords>
+    barcode, qrcode, qr, preview, camera, continuous, scanning
+  </keywords>
+  <license>
+    MIT
+  </license>
+  <author>
+    Alexander Sennikov
+  </author>
+  <engines>
+    <engine name='cordova' version='>=3.0.0'/>
+  </engines>
+  <js-module src='www/BarcodeScanner.js' name='BarcodeScanner'>
+    <clobbers target='plugins.barcodeScanner'/>
+    <clobbers target='BarcodeScanner'/>
+  </js-module>
+  <!-- ios -->
+  <platform name='ios'>
+    <config-file target='config.xml' parent='/*'>
+      <feature name='BarcodeScanner'>
+        <param name='ios-package' value='BarcodeScanner' onload='true'/>
+        <param name='onload' value='true'/>
+      </feature>
+    </config-file>
+    <!-- plugin header and source files -->
+    <header-file src='src/ios/BarcodeScanner.h'/>
+    <source-file src='src/ios/BarcodeScanner.m'/>
+    <!-- system frameworks -->
+    <framework src='AssetsLibrary.framework' weak='true'/>
+    <framework src='ImageIO.framework' weak='true'/>
+    <framework src='CoreImage.framework' weak='true'/>
+    <framework src='CoreVideo.framework' weak='true'/>
+    <framework src='CoreMedia.framework' weak='true'/>
+    <framework src='CoreGraphics.framework' weak='true'/>
+    <framework src='MobileCoreServices.framework' weak='true'/>
+    <framework src='Foundation.framework' autogen='true'/>
+    <framework src='AVFoundation.framework' autogen='true'/>
+    <framework src='CoreGraphics.framework' autogen='true'/>
+    <framework src='CoreMedia.framework' autogen='true'/>
+    <framework src='CoreVideo.framework' autogen='true'/>
+    <framework src='ImageIO.framework' autogen='true'/>
+    <framework src='QuartzCore.framework' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecBinaryShiftToken.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecCode.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecHighLevelEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecSimpleToken.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecState.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecToken.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecDetectorResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAztecWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCAztec.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAbstractDoCoMoResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAddressBookAUResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAddressBookDoCoMoResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAddressBookParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBizcardResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBookmarkDoCoMoResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCalendarParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEmailAddressParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEmailAddressResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEmailDoCoMoResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXExpandedProductParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXExpandedProductResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGeoParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGeoResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXISBNParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXISBNResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXParsedResultType.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXProductParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXProductResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXSMSMMSResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXSMSParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXSMSTOMMSTOResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXSMTPResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXTelParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXTelResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXTextParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXURIParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXURIResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXURLTOResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXVCardResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXVEventResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXVINParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXVINResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXWifiParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXWifiResultParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCapture.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCaptureDelegate.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCGImageLuminanceSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXImage.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMathUtils.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMonochromeRectangleDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXWhiteRectangleDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGenericGF.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGenericGFPoly.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXReedSolomonDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXReedSolomonEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBitArray.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBitMatrix.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBitSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBoolArray.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXByteArray.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCharacterSetECI.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDecoderResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDefaultGridSampler.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDetectorResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGlobalHistogramBinarizer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGridSampler.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXHybridBinarizer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXIntArray.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPerspectiveTransform.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXStringUtils.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBarcodeFormat.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBinarizer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBinaryBitmap.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXByteMatrix.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDecodeHints.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDimension.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEncodeHints.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXErrors.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCCore.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXInvertedLuminanceSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXLuminanceSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPlanarYUVLuminanceSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXResultMetadataType.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXResultPoint.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXResultPointCallback.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRGBLuminanceSource.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixBitMatrixParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixDataBlock.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixDecodedBitStreamParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixVersion.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixASCIIEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixBase256Encoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixC40Encoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixDefaultPlacement.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixEdifactEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixEncoderContext.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixErrorCorrection.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixHighLevelEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixSymbolInfo.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixSymbolInfo144.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixTextEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixX12Encoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXDataMatrixWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCDataMatrix.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMaxiCodeBitMatrixParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMaxiCodeDecodedBitStreamParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMaxiCodeDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCMaxiCode.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMaxiCodeReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXByQuadrantReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXGenericMultipleBarcodeReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultipleBarcodeReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAbstractExpandedDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI013103decoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01320xDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01392xDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01393xDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI013x0x1xDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI013x0xDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01AndOtherAIs.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01decoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAI01weightDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAnyAIDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedBlockParsedResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedCurrentParsingState.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedDecodedChar.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedDecodedInformation.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedDecodedNumeric.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedDecodedObject.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedFieldParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedGeneralAppIdDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXBitArrayBuilder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedPair.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSExpandedRow.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXAbstractRSSReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSS14Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSDataCharacter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSFinderPattern.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSPair.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXRSSUtils.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCodaBarReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCodaBarWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCode128Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCode128Writer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCode39Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCode39Writer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXCode93Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEAN13Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEAN13Writer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEAN8Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEAN8Writer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXEANManufacturerOrgSupport.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCOneD.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXITFReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXITFWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiFormatOneDReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiFormatUPCEANReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXOneDimensionalCodeWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXOneDReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCAReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCAWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEANExtension2Support.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEANExtension5Support.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEANExtensionSupport.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEANReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEANWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXUPCEReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXModulusGF.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXModulusPoly.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417ECErrorCorrection.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417BarcodeMetadata.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417BarcodeValue.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417BoundingBox.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Codeword.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417CodewordDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417DecodedBitStreamParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417DetectionResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417DetectionResultColumn.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417DetectionResultRowIndicatorColumn.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417ScanningDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Detector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417DetectorResult.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417BarcodeMatrix.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417BarcodeRow.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Dimensions.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417ErrorCorrection.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417HighLevelEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCPDF417.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Common.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Reader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417ResultMetadata.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXPDF417Writer.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeBitMatrixParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDataBlock.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDataMask.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDecodedBitStreamParser.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDecoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDecoderMetaData.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeErrorCorrectionLevel.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeFormatInformation.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeMode.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeVersion.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeAlignmentPattern.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeAlignmentPatternFinder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeFinderPattern.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeFinderPatternFinder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeFinderPatternInfo.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCode.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeBlockPair.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeEncoder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeMaskUtil.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeMatrixUtil.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiDetector.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiFinderPatternFinder.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeMultiReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjCQRCode.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXQRCodeWriter.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXingObjC.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiFormatReader.h' autogen='true'/>
+    <header-file src='src/ios/vendor/headers/ZXMultiFormatWriter.h' autogen='true'/>
+    <source-file framework='true' src='src/ios/vendor/libPods-ZXingObjC.a' autogen='true'/>
+  </platform>
+</plugin>
