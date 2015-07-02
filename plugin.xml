@@ -307,13 +307,11 @@
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.RECORD_VIDEO" />
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 			<uses-permission android:name="android.permission.CAMERA" />
 
 			<uses-feature android:name="android.hardware.camera" />
 			<uses-feature android:name="android.hardware.camera.autofocus" />
-			<uses-feature android:name="android.hardware.camera.setParameters" />
     </config-file>
 
     <source-file src="src/android/BarcodeScanner.java" target-dir="src/com/sandyclock/plugins/BarcodeScanner" />
