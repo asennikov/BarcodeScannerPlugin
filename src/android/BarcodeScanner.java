@@ -288,9 +288,9 @@ public class BarcodeScanner extends CordovaPlugin
     }
 
     private Camera.Size getOptimalPictureSize(Camera.Parameters params) {
-        Camera.Size bigEnough = params.getSupportedPictureSizes().get(0);
+        Camera.Size bigEnough = params.getSupportedPreviewSizes().get(0);
 
-        for (Camera.Size size : params.getSupportedPictureSizes()) {
+        for (Camera.Size size : params.getSupportedPreviewSizes()) {
             if (size.width >= mWidth && size.height >= mHeight
                 && size.width < bigEnough.width
                 && size.height < bigEnough.height
