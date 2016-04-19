@@ -208,7 +208,7 @@ public class BarcodeScanner extends CordovaPlugin
                 };
                 worker.schedule(task, 3, TimeUnit.SECONDS);
 
-                Log.d(TAG, 'Decoded string: ' + decodeResult.getText());
+                Log.d(TAG, "Decoded string: " + decodeResult.getText());
 
                 PluginResult result = new PluginResult(PluginResult.Status.OK, decodeResult.getText());
                 result.setKeepCallback(true);
